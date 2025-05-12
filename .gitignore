@@ -1,0 +1,14 @@
+# Entorno virtual de Python
+Primer_parcial/
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+
+# Otros archivos o carpetas que quieras ignorar
+mi_archivo_temporal.txt
+carpeta_de_datos_temporales/
