@@ -1,4 +1,11 @@
 """
+
+for var in secuencia:
+    # Hacer algo ...
+
+Donde var es la variable de ciclo o variable de control y secuencia la secuencia de valores que deberá iterarse. 
+Es necesario remarcar la importancia de los dos puntos al final de esta primera línea y en indentar el bloque de código subsecuente que definirá el cuerpo del ciclo for.
+
 # Ciclo FOR con rangos numericos
 print("---Monitoreo de sensores")
 
