@@ -1,37 +1,22 @@
-# Conceptos básicos de Bases de datos con MySql
 import pymysql
 
-# Crear conexión usando un diccionario
+# Configuración de conexión sin especificar base de datos
 config = {
-    'host' : 'localhost',            # creamos el servidor
-    'user' : 'test1',                # Creamos un usuario
-    'password': 'test123',            # Creamos una contraseña
-    'database': 'Usuarios'
+    'host': 'localhost',
+    'user': 'Usuario_nuevo',
+    'password': 'Test987654321'
 }
 
-# Funcion para probar nuestra conexión
-
-def test_conection():
+def crear_base_datos():
     try:
         conn = pymysql.connect(**config)
-        print(f"!Conexión Exitosa¡")
-    
-
-        cursor = conn.cursor()
-        sql = "CREATE DATA BASE IF NOT EXISTS Usuarios"
-        cursor.execute(sql)
-        print("!Base de datos: 'Usuarios' creada¡")
+        with conn.cursor() as cursor:
+            cursor.execute("CREATE DATABASE IF NOT EXISTS Usuarios")
+            print(" Base de datos 'Usuarios' creada o ya existente")
         conn.close()
-
-
     except Exception as e:
-        print(f"Error al crear la base de datos {e}")
-
-
-
+        print(f" Error al crear la base de datos: {e}")
 
 if __name__ == '__main__':
-    print("===== Creando Sistemas ====")
-
-    test_conection()
-    
+    print("===== CREAR BASE DE DATOS =====")
+    crear_base_datos()
