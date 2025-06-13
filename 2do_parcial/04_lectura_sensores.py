@@ -74,13 +74,11 @@ def insertar_dato_sensor(tipo_sensor):
     except Exception as e:
         print(f"Error al insertar dato: {e}")
 
-# Función que genera múltiples lecturas
 def simular_datos_sensores(sensores):
-    for sensor in sensores:
-        for _ in range(10):
-            insertar_dato_sensor(sensor)
-            time.sleep(0.2)
-
+    for sensor in sensores:          # 1. Itera sobre cada tipo de sensor
+        for _ in range(10):         # 2. Genera 10 lecturas por sensor
+            insertar_dato_sensor(sensor)  # 3. Inserta cada lectura
+            time.sleep(0.2)         # 4. Pausa entre lecturas
 
 def limpiar_tabla_lecturas():
     try:
@@ -109,4 +107,3 @@ if __name__ == '__main__':
     limpiar_tabla_lecturas()    # Limpiar tabla para no tener tantos datos
     sensores = ["Temperatura", "Presion", "Humedad", "Vibracion", "Luz"]
     simular_datos_sensores(sensores)  # Insertar datos simulados
-
